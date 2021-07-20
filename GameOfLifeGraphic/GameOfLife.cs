@@ -5,76 +5,69 @@ namespace GameOfLife
 {
     class Field
     {
-        private readonly byte Alive = 1;
-        private readonly byte Dead = 0;
-        private readonly int Height;
-        private readonly int Width;
-        private readonly byte[,] FieldNow;
-        private readonly byte[,] FieldNext;
+        private const byte Alive = 1;
+        private const byte Dead = 0;
+        private readonly int _width;
+        private readonly int _height;
+        private readonly byte[,] _fieldNow;
 
         public byte[,] FieldCurrent
         {
-            get => FieldNow;
+            get => _fieldNow;
         }
 
-        public Field() : this(10, 10)
+        public Field(int width, int height)
         {
-        }
-        public Field(int height, int width)
-        {
-            Height = height;
-            Width = width;
-            FieldNow = new byte[height, width];
-            FieldNext = new byte[height, width];
+            _width = width;
+            _height = height;
+            _fieldNow = new byte[width, height];
         }
 
-        public byte[,] FillRandom(float fillPercent)
+        public void FillRandom(float fillPercent)
         {
             Random rnd = new();
 
-            for (int i = 0; i < Height; i++)
+            for (int i = 0; i < _width; i++)
             {
-                for (int j = 0; j < Width; j++)
+                for (int j = 0; j < _height; j++)
                 {
-                    FieldNow[i, j] = rnd.NextDouble() <= fillPercent ? Alive : Dead;
+                    _fieldNow[i, j] = (rnd.NextDouble() <= fillPercent) ? Alive : Dead;
                 }
             }
-            return FieldNow;
         }
 
         public void UpdateField()
         {
-            for (int i = 1; i < Height - 1; i++)
+
+            var FieldNext = new byte[_width, _height];
+
+            for (int i = 0; i < _width; i++)
             {
-                for (int j = 1; j < Width - 1; j++)
+                for (int j = 0; j < _height; j++)
                 {
-                    bool isAlive = FieldNow[i, j] == 1;
+                    bool isAlive = _fieldNow[i, j] == 1;
 
                     byte numNeigbours =
                         (byte)
-                        (FieldNow[i - 1, j] +
-                        FieldNow[i - 1, j - 1] +
-                        FieldNow[i - 1, j + 1] +
-                        FieldNow[i, j - 1] +
-                        FieldNow[i + 1, j] +
-                        FieldNow[i + 1, j + 1] +
-                        FieldNow[i + 1, j - 1] +
-                        FieldNow[i, j + 1]);
+                        (_fieldNow[(i - 1 + _width) % _width, j] +
+                        _fieldNow[(i - 1 + _width) % _width, (j - 1 + _height) % _height] +
+                        _fieldNow[(i - 1 + _width) % _width, (j + 1 + _height) % _height] +
+                        _fieldNow[i, (j - 1 + _height) % _height] +
+                        _fieldNow[(i + 1 + _width) % _width, j] +
+                        _fieldNow[(i + 1 + _width) % _width, (j + 1 + _height) % _height] +
+                        _fieldNow[(i + 1 + _width) % _width, (j - 1 + _height) % _height] +
+                        _fieldNow[i, (j + 1 + _height) % _height]);
 
                     bool stayAlive = isAlive && (numNeigbours == 2 || numNeigbours == 3);
                     bool born = !isAlive && numNeigbours == 3;
 
-                    FieldNext[i, j] = stayAlive | born ? Alive : Dead;
+                    FieldNext[i, j] = stayAlive || born ? Alive : Dead;
 
                 }
             }
-            for (int i = 0; i < Height; i++)
-            {
-                for (int j = 0; j < Width; j++)
-                {
-                    FieldNow[i, j] = FieldNext[i, j];
-                }
-            }
+
+            Array.Copy(FieldNext, _fieldNow, FieldNext.Length);
+
         }
 
     }

@@ -30,59 +30,59 @@ namespace GameOfLifeGraphic
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.splitContainerBottom = new System.Windows.Forms.SplitContainer();
             this.PictureBoxMain = new System.Windows.Forms.PictureBox();
-            this.Next = new System.Windows.Forms.Button();
+            this.NextButton = new System.Windows.Forms.Button();
             this.ResumeButton = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelSpeed = new System.Windows.Forms.Label();
             this.SpeedBar = new System.Windows.Forms.TrackBar();
             this.StopButton = new System.Windows.Forms.Button();
             this.StartButton = new System.Windows.Forms.Button();
             this.FillingSelector = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelFill = new System.Windows.Forms.Label();
             this.ResolutionSelector = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            this.labelRes = new System.Windows.Forms.Label();
+            this.GameTimer = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerBottom)).BeginInit();
+            this.splitContainerBottom.Panel1.SuspendLayout();
+            this.splitContainerBottom.Panel2.SuspendLayout();
+            this.splitContainerBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpeedBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FillingSelector)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ResolutionSelector)).BeginInit();
             this.SuspendLayout();
             // 
-            // splitContainer1
+            // splitContainerBottom
             // 
-            this.splitContainer1.Cursor = System.Windows.Forms.Cursors.HSplit;
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.splitContainer1.IsSplitterFixed = true;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.splitContainerBottom.Cursor = System.Windows.Forms.Cursors.HSplit;
+            this.splitContainerBottom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerBottom.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.splitContainerBottom.IsSplitterFixed = true;
+            this.splitContainerBottom.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerBottom.Name = "splitContainerBottom";
+            this.splitContainerBottom.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
-            // splitContainer1.Panel1
+            // splitContainerBottom.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.PictureBoxMain);
+            this.splitContainerBottom.Panel1.Controls.Add(this.PictureBoxMain);
             // 
-            // splitContainer1.Panel2
+            // splitContainerBottom.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.Next);
-            this.splitContainer1.Panel2.Controls.Add(this.ResumeButton);
-            this.splitContainer1.Panel2.Controls.Add(this.label3);
-            this.splitContainer1.Panel2.Controls.Add(this.SpeedBar);
-            this.splitContainer1.Panel2.Controls.Add(this.StopButton);
-            this.splitContainer1.Panel2.Controls.Add(this.StartButton);
-            this.splitContainer1.Panel2.Controls.Add(this.FillingSelector);
-            this.splitContainer1.Panel2.Controls.Add(this.label2);
-            this.splitContainer1.Panel2.Controls.Add(this.ResolutionSelector);
-            this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Panel2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.splitContainer1.Size = new System.Drawing.Size(1194, 522);
-            this.splitContainer1.SplitterDistance = 472;
-            this.splitContainer1.TabIndex = 0;
+            this.splitContainerBottom.Panel2.Controls.Add(this.NextButton);
+            this.splitContainerBottom.Panel2.Controls.Add(this.ResumeButton);
+            this.splitContainerBottom.Panel2.Controls.Add(this.labelSpeed);
+            this.splitContainerBottom.Panel2.Controls.Add(this.SpeedBar);
+            this.splitContainerBottom.Panel2.Controls.Add(this.StopButton);
+            this.splitContainerBottom.Panel2.Controls.Add(this.StartButton);
+            this.splitContainerBottom.Panel2.Controls.Add(this.FillingSelector);
+            this.splitContainerBottom.Panel2.Controls.Add(this.labelFill);
+            this.splitContainerBottom.Panel2.Controls.Add(this.ResolutionSelector);
+            this.splitContainerBottom.Panel2.Controls.Add(this.labelRes);
+            this.splitContainerBottom.Panel2.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.splitContainerBottom.Size = new System.Drawing.Size(1194, 522);
+            this.splitContainerBottom.SplitterDistance = 472;
+            this.splitContainerBottom.TabIndex = 0;
             // 
             // PictureBoxMain
             // 
@@ -94,15 +94,15 @@ namespace GameOfLifeGraphic
             this.PictureBoxMain.TabIndex = 0;
             this.PictureBoxMain.TabStop = false;
             // 
-            // Next
+            // NextButton
             // 
-            this.Next.Location = new System.Drawing.Point(684, 19);
-            this.Next.Name = "Next";
-            this.Next.Size = new System.Drawing.Size(75, 23);
-            this.Next.TabIndex = 9;
-            this.Next.Text = "Next";
-            this.Next.UseVisualStyleBackColor = true;
-            this.Next.Click += new System.EventHandler(this.Next_Click);
+            this.NextButton.Location = new System.Drawing.Point(684, 19);
+            this.NextButton.Name = "NextButton";
+            this.NextButton.Size = new System.Drawing.Size(75, 23);
+            this.NextButton.TabIndex = 9;
+            this.NextButton.Text = "Next";
+            this.NextButton.UseVisualStyleBackColor = true;
+            this.NextButton.Click += new System.EventHandler(this.Next_Click);
             // 
             // ResumeButton
             // 
@@ -114,14 +114,14 @@ namespace GameOfLifeGraphic
             this.ResumeButton.UseVisualStyleBackColor = true;
             this.ResumeButton.Click += new System.EventHandler(this.ResumeButton_Click);
             // 
-            // label3
+            // labelSpeed
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(765, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 15);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Speed";
+            this.labelSpeed.AutoSize = true;
+            this.labelSpeed.Location = new System.Drawing.Point(765, 22);
+            this.labelSpeed.Name = "labelSpeed";
+            this.labelSpeed.Size = new System.Drawing.Size(39, 15);
+            this.labelSpeed.TabIndex = 7;
+            this.labelSpeed.Text = "Speed";
             // 
             // SpeedBar
             // 
@@ -173,14 +173,14 @@ namespace GameOfLifeGraphic
             0,
             0});
             // 
-            // label2
+            // labelFill
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(226, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Filling";
+            this.labelFill.AutoSize = true;
+            this.labelFill.Location = new System.Drawing.Point(226, 19);
+            this.labelFill.Name = "labelFill";
+            this.labelFill.Size = new System.Drawing.Size(39, 15);
+            this.labelFill.TabIndex = 2;
+            this.labelFill.Text = "Filling";
             // 
             // ResolutionSelector
             // 
@@ -205,35 +205,35 @@ namespace GameOfLifeGraphic
             0,
             0});
             // 
-            // label1
+            // labelRes
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Resolution";
+            this.labelRes.AutoSize = true;
+            this.labelRes.Location = new System.Drawing.Point(19, 19);
+            this.labelRes.Name = "labelRes";
+            this.labelRes.Size = new System.Drawing.Size(63, 15);
+            this.labelRes.TabIndex = 0;
+            this.labelRes.Text = "Resolution";
             // 
-            // timer1
+            // GameTimer
             // 
-            this.timer1.Interval = 20;
-            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            this.GameTimer.Interval = 20;
+            this.GameTimer.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1194, 522);
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.splitContainerBottom);
             this.Name = "GameForm";
             this.Text = "GameOfLife";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.GameForm_Load);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.splitContainerBottom.Panel1.ResumeLayout(false);
+            this.splitContainerBottom.Panel2.ResumeLayout(false);
+            this.splitContainerBottom.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerBottom)).EndInit();
+            this.splitContainerBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpeedBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FillingSelector)).EndInit();
@@ -244,19 +244,19 @@ namespace GameOfLifeGraphic
 
         #endregion
 
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.SplitContainer splitContainerBottom;
+        private System.Windows.Forms.Label labelRes;
         private System.Windows.Forms.NumericUpDown ResolutionSelector;
         private System.Windows.Forms.NumericUpDown FillingSelector;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelFill;
         private System.Windows.Forms.Button StopButton;
         private System.Windows.Forms.Button StartButton;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer GameTimer;
         private System.Windows.Forms.PictureBox PictureBoxMain;
         private System.Windows.Forms.TrackBar SpeedBar;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelSpeed;
         private System.Windows.Forms.Button ResumeButton;
-        private System.Windows.Forms.Button Next;
+        private System.Windows.Forms.Button NextButton;
     }
 }
 

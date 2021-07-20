@@ -48,7 +48,7 @@ namespace GameOfLifeGraphic
             FillingSelector.Enabled = false;
 
             FirstFrameInit();
-            timer1.Start();
+            GameTimer.Start();
         }
 
         private void NextFrame()
@@ -56,16 +56,17 @@ namespace GameOfLifeGraphic
             _graphics.Clear(Color.Black);
 
             
-            for (int i = 0; i < field.FieldCurrent.GetLength(0); i++)
+            for (int x = 0; x < field.FieldCurrent.GetLength(0); x++)
             {
-                for (int j = 0; j < field.FieldCurrent.GetLength(1); j++)
+                for (int y = 0; y < field.FieldCurrent.GetLength(1); y++)
                 {
-                    if (field.FieldCurrent[i, j] == 1)
+                    if (field.FieldCurrent[x, y] == 1)
                     {
                         _graphics.FillRectangle(
-                            Brushes.DarkGreen, i * _cell_size, j * _cell_size, _cell_size_borderless, _cell_size_borderless);
+                            Brushes.DarkGreen, x * _cell_size, y * _cell_size, _cell_size_borderless, _cell_size_borderless);
                     }
                 }
+
             }
             field.UpdateField();
             PictureBoxMain.Refresh();
@@ -75,35 +76,35 @@ namespace GameOfLifeGraphic
 
         private void StopButton_Click(object sender, EventArgs e)
         {
-            if (!timer1.Enabled)
+            if (!GameTimer.Enabled)
                 return;
 
             ResolutionSelector.Enabled = true;
             FillingSelector.Enabled = true;
 
-            timer1.Stop();
+            GameTimer.Stop();
 
         }
 
         private void SpeedBar_Scroll(object sender, EventArgs e)
         {
-            timer1.Interval = SpeedBar.Value;
+            GameTimer.Interval = SpeedBar.Value;
         }
 
         private void ResumeButton_Click(object sender, EventArgs e)
         {
-            if (timer1.Enabled)
+            if (GameTimer.Enabled)
                 return;
 
             ResolutionSelector.Enabled = false;
             FillingSelector.Enabled = false;
 
-            timer1.Start();
+            GameTimer.Start();
         }
 
         private void Next_Click(object sender, EventArgs e)
         {
-            if (!timer1.Enabled)
+            if (!GameTimer.Enabled)
                 NextFrame();
         }
 
