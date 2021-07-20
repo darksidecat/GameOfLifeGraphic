@@ -40,7 +40,7 @@ namespace GameOfLifeGraphic
             this.StartButton = new System.Windows.Forms.Button();
             this.FillingSelector = new System.Windows.Forms.NumericUpDown();
             this.labelFill = new System.Windows.Forms.Label();
-            this.ResolutionSelector = new System.Windows.Forms.NumericUpDown();
+            this.ScaleSelector = new System.Windows.Forms.NumericUpDown();
             this.labelRes = new System.Windows.Forms.Label();
             this.GameTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBottom)).BeginInit();
@@ -50,7 +50,7 @@ namespace GameOfLifeGraphic
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpeedBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FillingSelector)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ResolutionSelector)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ScaleSelector)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerBottom
@@ -77,7 +77,7 @@ namespace GameOfLifeGraphic
             this.splitContainerBottom.Panel2.Controls.Add(this.StartButton);
             this.splitContainerBottom.Panel2.Controls.Add(this.FillingSelector);
             this.splitContainerBottom.Panel2.Controls.Add(this.labelFill);
-            this.splitContainerBottom.Panel2.Controls.Add(this.ResolutionSelector);
+            this.splitContainerBottom.Panel2.Controls.Add(this.ScaleSelector);
             this.splitContainerBottom.Panel2.Controls.Add(this.labelRes);
             this.splitContainerBottom.Panel2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.splitContainerBottom.Size = new System.Drawing.Size(1194, 522);
@@ -157,7 +157,7 @@ namespace GameOfLifeGraphic
             // 
             // FillingSelector
             // 
-            this.FillingSelector.Location = new System.Drawing.Point(295, 17);
+            this.FillingSelector.Location = new System.Drawing.Point(223, 17);
             this.FillingSelector.Minimum = new decimal(new int[] {
             1,
             0,
@@ -176,30 +176,30 @@ namespace GameOfLifeGraphic
             // labelFill
             // 
             this.labelFill.AutoSize = true;
-            this.labelFill.Location = new System.Drawing.Point(226, 19);
+            this.labelFill.Location = new System.Drawing.Point(178, 19);
             this.labelFill.Name = "labelFill";
             this.labelFill.Size = new System.Drawing.Size(39, 15);
             this.labelFill.TabIndex = 2;
             this.labelFill.Text = "Filling";
             // 
-            // ResolutionSelector
+            // ScaleSelector
             // 
-            this.ResolutionSelector.Location = new System.Drawing.Point(88, 17);
-            this.ResolutionSelector.Maximum = new decimal(new int[] {
+            this.ScaleSelector.Location = new System.Drawing.Point(52, 17);
+            this.ScaleSelector.Maximum = new decimal(new int[] {
             20,
             0,
             0,
             0});
-            this.ResolutionSelector.Minimum = new decimal(new int[] {
+            this.ScaleSelector.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.ResolutionSelector.Name = "ResolutionSelector";
-            this.ResolutionSelector.Size = new System.Drawing.Size(120, 23);
-            this.ResolutionSelector.TabIndex = 1;
-            this.ResolutionSelector.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.ResolutionSelector.Value = new decimal(new int[] {
+            this.ScaleSelector.Name = "ScaleSelector";
+            this.ScaleSelector.Size = new System.Drawing.Size(120, 23);
+            this.ScaleSelector.TabIndex = 1;
+            this.ScaleSelector.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ScaleSelector.Value = new decimal(new int[] {
             4,
             0,
             0,
@@ -208,11 +208,11 @@ namespace GameOfLifeGraphic
             // labelRes
             // 
             this.labelRes.AutoSize = true;
-            this.labelRes.Location = new System.Drawing.Point(19, 19);
+            this.labelRes.Location = new System.Drawing.Point(12, 19);
             this.labelRes.Name = "labelRes";
-            this.labelRes.Size = new System.Drawing.Size(63, 15);
+            this.labelRes.Size = new System.Drawing.Size(34, 15);
             this.labelRes.TabIndex = 0;
-            this.labelRes.Text = "Resolution";
+            this.labelRes.Text = "Scale";
             // 
             // GameTimer
             // 
@@ -237,7 +237,7 @@ namespace GameOfLifeGraphic
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpeedBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FillingSelector)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ResolutionSelector)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ScaleSelector)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -246,7 +246,7 @@ namespace GameOfLifeGraphic
 
         private System.Windows.Forms.SplitContainer splitContainerBottom;
         private System.Windows.Forms.Label labelRes;
-        private System.Windows.Forms.NumericUpDown ResolutionSelector;
+        private System.Windows.Forms.NumericUpDown ScaleSelector;
         private System.Windows.Forms.NumericUpDown FillingSelector;
         private System.Windows.Forms.Label labelFill;
         private System.Windows.Forms.Button StopButton;

@@ -27,7 +27,7 @@ namespace GameOfLifeGraphic
 
         private void FirstFrameInit()
         {
-            _cell_size = (int)ResolutionSelector.Value;
+            _cell_size = (int)ScaleSelector.Value;
             _cell_size_borderless = _cell_size - ((_cell_size > 2) ? 1 : 0);
 
             _x = PictureBoxMain.Width / _cell_size;
@@ -44,7 +44,7 @@ namespace GameOfLifeGraphic
 
         private void Startbutton_Click(object sender, EventArgs e)
         {
-            ResolutionSelector.Enabled = false;
+            ScaleSelector.Enabled = false;
             FillingSelector.Enabled = false;
 
             FirstFrameInit();
@@ -79,7 +79,7 @@ namespace GameOfLifeGraphic
             if (!GameTimer.Enabled)
                 return;
 
-            ResolutionSelector.Enabled = true;
+            ScaleSelector.Enabled = true;
             FillingSelector.Enabled = true;
 
             GameTimer.Stop();
@@ -96,7 +96,7 @@ namespace GameOfLifeGraphic
             if (GameTimer.Enabled)
                 return;
 
-            ResolutionSelector.Enabled = false;
+            ScaleSelector.Enabled = false;
             FillingSelector.Enabled = false;
 
             GameTimer.Start();
